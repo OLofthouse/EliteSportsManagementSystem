@@ -1,8 +1,8 @@
 {"users": [
-    {"username": "Oscar", "password": "password"},
-    {"username": "Hannah", "password": "1234"},
-    {"username": "Ralph", "password": "password123"}, 
-    {"username": "Flo", "password": "123456789"}
+    {"username": "Oscar", "password": "password", "type": "player"},
+    {"username": "Hannah", "password": "1234", "type": "coach"},
+    {"username": "Ralph", "password": "password123", "type": "player"}, 
+    {"username": "Flo", "password": "123456789", "type": "player"}
 ]}
 
 
