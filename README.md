@@ -1,8 +1,8 @@
 # EliteSportsManagementSystem
 
-##L5 Software Engineering Group Assigment Project
+## L5 Software Engineering Group Assigment Project
 
-###Background:  
+### Background:  
 
 A prominent sports organization, "Elite Sports Network," managing multiple teams across various sports, faced challenges in efficiently coordinating player activities, match schedules, and communication among players, coaches, and administrators. To address these issues, they decided to develop a comprehensive Sports Team Management System (STMS) that would streamline team operations, enhance player performance tracking, and improve overall communication and collaboration. 
 
