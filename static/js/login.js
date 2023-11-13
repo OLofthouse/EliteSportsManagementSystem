@@ -1,4 +1,4 @@
-const jsonFilePath = '/data.json'; 
+const jsonFilePath = '/data/data.json'; 
 var usersObj = {}; 
 var currentUser = {}; 
 
