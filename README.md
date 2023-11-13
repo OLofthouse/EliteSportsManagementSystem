@@ -6,7 +6,7 @@
 
 A prominent sports organization, "Elite Sports Network," managing multiple teams across various sports, faced challenges in efficiently coordinating player activities, match schedules, and communication among players, coaches, and administrators. To address these issues, they decided to develop a comprehensive Sports Team Management System (STMS) that would streamline team operations, enhance player performance tracking, and improve overall communication and collaboration. 
 
-###Project Overview:  
+### Project Overview:  
 
 The Sports Team Management System (STMS) is a web-based platform designed to centralize and automate various aspects of sports team management for Elite Sports Network. The system aims to facilitate seamless communication, efficient training schedule management, fixture tracking, and comprehensive player performance analysis. 
 
