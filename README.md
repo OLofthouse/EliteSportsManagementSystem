@@ -10,13 +10,13 @@ A prominent sports organization, "Elite Sports Network," managing multiple teams
 
 The Sports Team Management System (STMS) is a web-based platform designed to centralize and automate various aspects of sports team management for Elite Sports Network. The system aims to facilitate seamless communication, efficient training schedule management, fixture tracking, and comprehensive player performance analysis. 
 
-**Resources Used:** 
+Resources Used:
   - [Figma](https://www.figma.com/) for Design
   - [Gantt Chart](https://www.onlinegantt.com/) for Team Management
   - [GitHub](https://www.github.com/) for Implementation
   - MS Teams for File Manangement
 
-**Team:** 
+Team: 
 s5418693@bournemouth.ac.uk - Oscar 
 s5534243@bournemouth.ac.uk - Hannah
 s5527366@bournemouth.ac.uk - Ralph
