@@ -69,14 +69,16 @@ function buttonLoginClick() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         console.log('Changing Pages'); 
+                        window.location.assign('/userdashboard');
                     } else {
                         console.log('xhttp error occurred', this.status); 
                     }
                 }
 
-                xhttp.open("PUT", "/user-dashboard", true); 
+                xhttp.open("GET", "/user-dashboard", true); 
                 xhttp.send(); 
                 //window.location.href = '/html-pages/userdashboard.html'; 
+
             } else {
                 incorrectPassword(); 
             }

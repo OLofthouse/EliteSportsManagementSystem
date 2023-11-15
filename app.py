@@ -7,6 +7,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route("/userdashboard")
+def userdashboard():
+    return render_template('userdashboard.html')
+
 @app.route('/api/users')
 def returnUsers(): 
     
@@ -24,9 +28,8 @@ def returnUsers():
 
     return response
 
-@app.route('/user-dashboard', methods=['PUT'])
+@app.route('/user-dashboard', methods=['GET'])
 def userDashboard(): 
-    print("CHANGING USERDASHBOARD")
     return render_template('userdashboard.html')
 
 if __name__ == "__main__":
