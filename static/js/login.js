@@ -2,21 +2,14 @@ const jsonFilePath = '/data/data.json';
 var usersObj = {}; 
 var currentUser = {}; 
 
+/*This function returns the json file data, and stores user data in the
+usersObj object. This can then be accessed using usersObj.users.{username,
+password, email, type} etc. */
 function getJSONData () {
-    
-    /*fetch(jsonFilePath) 
-        .then(response => response.json())
-        .then(data => {
-            //Process data 
-            usersObj = data.users;
-            console.log(usersObj);
-        })
-        .catch(error => {
-            console.error('Error Fetching data: ', error); 
-        })*/
 
         console.log('Getting users from Flask'); 
 
+        //Create a HTTP request to talk to the Flask app. 
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -32,15 +25,25 @@ function getJSONData () {
     
 }
 
+/*This function should return dynamic HTML content to promt the 
+user into re-entering their password because it is incorrect.
+The password has already been checked in the buttonLoginClick() function*/ 
 function incorrectPassword() {
-    console.log('no matching user found'); 
+    console.log('no matching password found'); 
 }
 
+/*This function should return dynamic HTML content to promt the 
+user into re-entering their username because it is incorrect.
+The username has already been checked in the buttonLoginClick() function*/ 
 function incorrectUsername() {
     console.log('no matching user found'); 
 }
 
 
+/*This function runs when the login button has been clicked. It checks
+the user-entered usernames and passwords against the usersObj list of 
+valid users and passwords, and if the input is authenticated, the page 
+changes url to the relevant dashboard of either a player or coach.*/ 
 function buttonLoginClick() {
     //Validate the login information 
     let username = document.getElementById('loginUsername').value; 
@@ -48,36 +51,28 @@ function buttonLoginClick() {
 
 
     let i = 0; 
-    let arrayLength = Object.keys(usersObj).length;
+    let arrayLength = Object.keys(usersObj.users).length;
     let userFound = false;  
     
     do {
 
+        console.log("Currently Checking user: ", usersObj.users[i].username, " against ", username); 
+
         if (usersObj.users[i].username === username) {
             console.log('Username Matches'); 
             userFound = true; 
-            if (usersObj.users[i].password === password) {
-                //Correct login details.
-                currentUser = usersObj[i];  
 
-                let jsonString = JSON.stringify(currentUser); 
-                localStorage.setItem('userInfo', jsonString); 
+            console.log("Currently Checking password: ", usersObj.users[i].password, " against", password); 
+            if (usersObj.users[i].password === String(password)) {
+                //Correct login details.
+                currentUser = usersObj.users[i];  
 
                 //Determine if the user is a player or a coach (admin)
-                
-                let xhttp = new XMLHttpRequest(); 
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log('Changing Pages'); 
-                        window.location.assign('/userdashboard');
-                    } else {
-                        console.log('xhttp error occurred', this.status); 
-                    }
+                if (currentUser.type === 'player') {
+                   window.location.assign('/userdashboard');
+                } else if (currentUser.type === 'coach') {
+                    window.location.assign('/coachdashboard'); 
                 }
-
-                xhttp.open("GET", "/user-dashboard", true); 
-                xhttp.send(); 
-                //window.location.href = '/html-pages/userdashboard.html'; 
 
             } else {
                 incorrectPassword(); 
@@ -85,20 +80,15 @@ function buttonLoginClick() {
         }
 
         i++;
+        console.log(i, arrayLength); 
     } while ((i < arrayLength) && (userFound === false)); 
 
     userFound ? null : incorrectUsername(); //Ternary Operator
 
 }
 
-function getCurrentUser() {
-    return currentUser;
-}
-
 //Add event listeners
 let el = document.getElementById('loginFormButton');
 el.addEventListener("click", buttonLoginClick);
-
-export { getCurrentUser }; 
 
 window.onload = getJSONData; 
