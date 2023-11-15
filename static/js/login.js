@@ -4,7 +4,7 @@ var currentUser = {};
 
 function getJSONData () {
     
-    fetch(jsonFilePath) 
+    /*fetch(jsonFilePath) 
         .then(response => response.json())
         .then(data => {
             //Process data 
@@ -13,7 +13,22 @@ function getJSONData () {
         })
         .catch(error => {
             console.error('Error Fetching data: ', error); 
-        })
+        })*/
+
+        console.log('Getting users from Flask'); 
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                usersObj = JSON.parse(this.responseText);
+                console.log(usersObj); 
+            } else {
+                console.log('xhttp request problem occurred', this.status); 
+            }
+        }
+
+        xhttp.open("GET", "api/users", true); 
+        xhttp.send(); 
     
 }
 
@@ -37,12 +52,11 @@ function buttonLoginClick() {
     let userFound = false;  
     
     do {
-        console.log(usersObj[i]);
 
-        if (usersObj[i].username === username) {
+        if (usersObj.users[i].username === username) {
             console.log('Username Matches'); 
             userFound = true; 
-            if (usersObj[i].password === password) {
+            if (usersObj.users[i].password === password) {
                 //Correct login details.
                 currentUser = usersObj[i];  
 
@@ -51,7 +65,20 @@ function buttonLoginClick() {
 
                 //Determine if the user is a player or a coach (admin)
                 
-                window.location.href = '/html-pages/userdashboard.html'; 
+                let xhttp = new XMLHttpRequest(); 
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log('Changing Pages'); 
+                        window.location.assign('/userdashboard');
+                    } else {
+                        console.log('xhttp error occurred', this.status); 
+                    }
+                }
+
+                xhttp.open("GET", "/user-dashboard", true); 
+                xhttp.send(); 
+                //window.location.href = '/html-pages/userdashboard.html'; 
+
             } else {
                 incorrectPassword(); 
             }
