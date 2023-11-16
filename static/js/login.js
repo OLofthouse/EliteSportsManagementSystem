@@ -26,19 +26,22 @@ function getJSONData () {
 }
 
 /*This function should return dynamic HTML content to promt the 
-user into re-entering their password because it is incorrect.
-The password has already been checked in the buttonLoginClick() function*/ 
-function incorrectPassword() {
-    console.log('no matching password found'); 
-}
-
-/*This function should return dynamic HTML content to promt the 
 user into re-entering their username because it is incorrect.
 The username has already been checked in the buttonLoginClick() function*/ 
 function incorrectUsername() {
     console.log('no matching user found'); 
+    let el = document.getElementById('incorrect-username'); 
+    el.hidden = false; 
 }
 
+
+/*This function should return dynamic HTML content to promt the 
+user into re-entering their password because it is incorrect.
+The password has already been checked in the buttonLoginClick() function*/ 
+function incorrectPassword() {
+    console.log('no matching password found'); 
+    document.getElementById('incorrect-password').hidden = false; 
+}
 
 /*This function runs when the login button has been clicked. It checks
 the user-entered usernames and passwords against the usersObj list of 
@@ -48,6 +51,9 @@ function buttonLoginClick() {
     //Validate the login information 
     let username = document.getElementById('loginUsername').value; 
     let password = document.getElementById('loginPassword').value; 
+
+    document.getElementById('incorrect-username').hidden = true; 
+    document.getElementById('incorrect-password').hidden = true; 
 
     let i = 0; 
     let coachArrayLength = Object.keys(usersObj.users[1].coaches).length;
@@ -74,8 +80,7 @@ function buttonLoginClick() {
             }
         }
 
-        i++;
-        console.log(i, playerArrayLength); 
+        i++;  
     } while ((i < playerArrayLength) && (userFound === false)); 
 
     //If the user trying to log in is not within the players array, then we check the coaches array
@@ -94,7 +99,8 @@ function buttonLoginClick() {
                 //Correct Login Details
                 currentUser = usersObj.users[1].coaches[j];
 
-                window.location.assign('/coachdashboard'); 
+                window.location.assign('/coachdashboard');
+                 
             } else {
                 incorrectPassword(); 
             }
