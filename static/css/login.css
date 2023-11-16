@@ -76,3 +76,12 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.login-container .login-form .input-group p {
+    color: red; 
+    margin-bottom: 0px; 
+}
+
+[hidden] {
+    display: none !important;
+}
