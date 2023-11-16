@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, make_response, redirect, url_for
+from flask import Flask, request, jsonify, render_template, make_response
 import sys, json, os
 
 app = Flask(__name__) 
@@ -14,6 +14,18 @@ def userdashboard():
 @app.route("/coachdashboard")
 def coachdashboard():
     return render_template('coachdashboard.html')
+
+@app.route("/fixturelist")
+def fixturelist(): 
+    return render_template('fixturelist.html')
+
+@app.route('/resultslist')
+def resultslist(): 
+    return render_template('resultslist.html')
+
+app.route('/trainingschedule')
+def trainingschedule(): 
+    return render_template('trainingschedule.html')
 
 @app.route('/api/users')
 def returnUsers(): 
@@ -31,6 +43,10 @@ def returnUsers():
     response.headers["Content-Type"] = "application/json"
 
     return response
+
+@app.route('/api/set-current-user')
+def setCurrentUser(): 
+    print('setting current user') 
 
 @app.route('/user-dashboard', methods=['GET'])
 def userDashboard(): 
