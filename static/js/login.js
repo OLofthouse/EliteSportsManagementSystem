@@ -49,30 +49,25 @@ function buttonLoginClick() {
     let username = document.getElementById('loginUsername').value; 
     let password = document.getElementById('loginPassword').value; 
 
-
     let i = 0; 
-    let arrayLength = Object.keys(usersObj.users).length;
+    let coachArrayLength = Object.keys(usersObj.users[1].coaches).length;
+    let playerArrayLength = Object.keys(usersObj.users[0].players).length; 
     let userFound = false;  
-    
+
     do {
 
-        console.log("Currently Checking user: ", usersObj.users[i].username, " against ", username); 
+        console.log("Currently Checking user: ", usersObj.users[0].players[i].username, " against ", username); 
 
-        if (usersObj.users[i].username === username) {
+        if (usersObj.users[0].players[i].username === username) {
             console.log('Username Matches'); 
             userFound = true; 
 
-            console.log("Currently Checking password: ", usersObj.users[i].password, " against", password); 
-            if (usersObj.users[i].password === String(password)) {
+            console.log("Currently Checking password: ", usersObj.users[0].players[i].password, " against", password); 
+            if (usersObj.users[0].players[i].password === String(password)) {
                 //Correct login details.
-                currentUser = usersObj.users[i];  
+                currentUser = usersObj.users[0].players[i];  
 
-                //Determine if the user is a player or a coach (admin)
-                if (currentUser.type === 'player') {
-                   window.location.assign('/userdashboard');
-                } else if (currentUser.type === 'coach') {
-                    window.location.assign('/coachdashboard'); 
-                }
+                window.location.assign('/userdashboard'); 
 
             } else {
                 incorrectPassword(); 
@@ -80,8 +75,35 @@ function buttonLoginClick() {
         }
 
         i++;
-        console.log(i, arrayLength); 
-    } while ((i < arrayLength) && (userFound === false)); 
+        console.log(i, playerArrayLength); 
+    } while ((i < playerArrayLength) && (userFound === false)); 
+
+    //If the user trying to log in is not within the players array, then we check the coaches array
+    let j = 0; 
+    if (userFound === false) {
+       do {
+
+        console.log("Currently checking Coach: ", usersObj.users[1].coaches[j].username, " against ", username);
+
+        if (usersObj.users[1].coaches[j].username === username) {
+            console.log('username matches'); 
+            userFound = true; 
+
+            console.log("Currently Checking password: ", usersObj.users[1].coaches[j].password, " against ", password); 
+            if (usersObj.users[1].coaches[j].password === password) {
+                //Correct Login Details
+                currentUser = usersObj.users[1].coaches[j];
+
+                window.location.assign('/coachdashboard'); 
+            } else {
+                incorrectPassword(); 
+            }
+        }
+
+        j++;
+       } while ((j < coachArrayLength) && (userFound === false)); 
+
+    }
 
     userFound ? null : incorrectUsername(); //Ternary Operator
 
