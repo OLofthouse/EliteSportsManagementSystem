@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify, render_template, make_response
+from flask import Flask, request, jsonify, render_template, make_response, request
 import sys, json, os
 
 app = Flask(__name__) 
+currentUserInfo = ""
 
 @app.route("/")
 def home():
@@ -48,15 +49,27 @@ def returnUsers():
 
     return response
 
-@app.route('/api/set-current-user')
+@app.route('/api/set-current-user', methods=['PUT'])
 def setCurrentUser(): 
     print('setting current user') 
+    
+    messageOK = jsonify(message="Jokes Uploaded")
+    messageFAIL = jsonify(message="Jokes Not Uploaded, issue in the API")
 
-@app.route('/user-dashboard', methods=['GET'])
-def userDashboard(): 
-    #Doesn't actually need to return this template, this is done with the other route
-    #in the login.js file, and is done by assigning a new url to the path. 
-    return render_template('userdashboard.html')
+    if request.is_json:
+        req = request.get_json()
+        global currentUserInfo
+        currentUserInfo = req
+        print(currentUserInfo)
+
+        return messageOK, 200
+    else:
+        return messageFAIL, 400
+
+@app.route('/api/get-current-user')
+def getCurrentUser(): 
+    global currentUserInfo
+    return jsonify(currentUserInfo)
 
 if __name__ == "__main__":
     app.run() 
