@@ -7,6 +7,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/signup')
+def signup():
+    return render_template('signup.html'); 
+
 @app.route("/userdashboard")
 def userdashboard():
     return render_template('userdashboard.html')

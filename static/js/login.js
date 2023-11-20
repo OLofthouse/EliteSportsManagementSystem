@@ -115,6 +115,16 @@ function buttonLoginClick() {
 
 }
 
+/* Set up the link to the sign-up page: this function should disallow the link from being clicked
+and replace it with a flask call and add the signup to the url. Flask should then return the 
+template for the signup page. */
+const signupLink = document.getElementById('signup-link'); 
+signupLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log("User Directing to Signup Page"); 
+    window.location.assign('/signup'); 
+});
+
 //Add event listeners
 let el = document.getElementById('loginFormButton');
 el.addEventListener("click", buttonLoginClick);
