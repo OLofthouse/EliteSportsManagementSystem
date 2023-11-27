@@ -9,7 +9,8 @@ packaged up and sent to flask to be stored in the DB. */
 function signUpUser() {
   inputUsername = document.getElementById('username').value; 
   inputDob = document.getElementById('dob').value; 
-  inputEmail = document.getElementById('email').value; 
+  inputEmail = document.getElementById('email').value;
+  inputName = document.getElementById('fullName').value;  
   inputPassword = document.getElementById('password').value; 
   inputConfirmPassword = document.getElementById('confirmPassword').value;
   inputUserType = "none";  
@@ -44,9 +45,8 @@ function signUpUser() {
     checkUserValidity(); 
   }
 
-  //Update signup screen to include name
-  inputName = "Standard Name"; 
 
+  //Create the object to be sent to the server with the sign up details. 
   signupInfo = {
     "username": inputUsername,
     "password": inputPassword, 
@@ -55,7 +55,7 @@ function signUpUser() {
     "dob": inputDob
   };
 
-  console.log("username: ", inputUsername, " dob: ", inputDob, " email: ", inputEmail, " password: ", inputPassword, " confirmPassword: ", inputConfirmPassword); 
+  console.log("username: ", inputUsername, " dob: ", inputDob, " email: ", inputEmail, " name: ", inputName, " password: ", inputPassword, " confirmPassword: ", inputConfirmPassword); 
 }
 
 /* This function should get the current user details from the db, and ensure 
@@ -133,16 +133,23 @@ function validUsername() {
   //Send info in an array called 'user_info'
   //Determine user type
 
-  let user_info = {"user_info": signupInfo}
+  let user_info = {"user_info": signupInfo};
   
-  let xhttp = new XMLHttpRequest()
-  let url = "/api/upload/signup/player"
+  let xhttp = new XMLHttpRequest();
+  let url = "/api/upload/signup/player";
+
+  if (inputUserType === "player") {
+    url = "/api/upload/signup/player";
+  } else if (inputUserType === "coach") {
+    url = "/api/upload/signup/coach";
+  }
 
   xhttp.onreadystatchange = function() {
 
     if (this.readyState == 4 && this.status == 200) {
       strResponse = JSON.parse(this.responseText);
       alert(strResponse.message)
+      returnToLogin(); 
     }   
   }
 

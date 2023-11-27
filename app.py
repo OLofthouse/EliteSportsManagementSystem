@@ -104,6 +104,38 @@ def upload_user():
     
     return jsonify({'message': 'Data appended successfully'})
 
+@app.route('/api/upload/signup/coach', methods=['POST'])
+def upload_coach(): 
+     # Load existing JSON data from file:
+    with open('data/data.json', 'r') as json_file:
+        data = json.load(json_file)
+    
+    new_user_info = request.json.get('user_info')
+    print(new_user_info)
+    
+    # Check the type of data['users'] and data['users']['players']
+    if 'users' in data:
+        print(type(data['users']))
+        print(data['users'])
+        print(data['users'][1])
+        if 'coaches' in data['users'][1]:
+            print(type(data['users'][1]['coaches']))
+            # Rest of your code for appending new_user_info
+            print('Successfully got coaches')
+            print(new_user_info)
+            print(data['users'][1])
+            data['users'][1]['coaches'].append(new_user_info)
+            print(data['users'][1])
+            print("successful append")
+            # Write the updated JSON data back to the file
+            with open('data/data.json', 'w') as json_file:
+                json.dump(data, json_file, indent=4)
+        else:
+            print("there are no coaches")
+    else:
+        print('The key "users" is missing in the JSON data')
+    
+    return jsonify({'message': 'Data appended successfully'})
 
 if __name__ == "__main__":
     app.run() 

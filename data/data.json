@@ -40,6 +40,13 @@
                     "name": "Hannah Gorry",
                     "email": "hannah@gorry.com",
                     "dob": "04-04-2000"
+                },
+                {
+                    "username": "TestCoach",
+                    "password": "password",
+                    "name": "Test Coach",
+                    "email": "test@coach.com",
+                    "dob": "2000-10-10"
                 }
             ]
         }
