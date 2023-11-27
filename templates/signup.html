@@ -10,7 +10,7 @@
 <body>
 
     
-    <form action="your-server-endpoint" method="post">
+    <form action="javascript:void(0);">
         <h2>Register</h2>
     
         <label for="username">Username:</label>
@@ -21,6 +21,9 @@
     
         <label for="email">Email Address:</label>
         <input type="email" id="email" name="email" required>
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="fullName" name="name" required>
     
         <label for="password">Create Password:</label>
         <input type="password" id="password" name="password" required>
@@ -30,14 +33,15 @@
     
         <div class="checkbox-group">
             <label for="player">Player</label>
-            <input type="checkbox" id="player" name="userType" value="player">
+            <input type="radio" id="player" name="userType" value="player">
             
             <label for="admin">Coach</label>
-            <input type="checkbox" id="admin" name="userType" value="admin">
+            <input type="radio" id="admin" name="userType" value="admin">
         </div>
     
-        <button type="submit">Register</button>
+        <button id="form-submit-button" type="submit">Register</button>
     </form>
+    <p id="return-to-login">Already have an account? Log in</p>
 </body>
  </html>
     
