@@ -71,5 +71,34 @@ def getCurrentUser():
     global currentUserInfo
     return jsonify(currentUserInfo)
 
+@app.route('/api/upload/signup/player', methods=['POST'])
+def upload_user():
+    # Load existing JSON data from file:
+    with open('data/data.json', 'r') as json_file:
+        data = json.load(json_file)
+    
+    new_user_info = request.json.get('user_info')
+    print(new_user_info)
+    
+    # Check the type of data['users'] and data['users']['players']
+    if 'users' in data:
+        print(type(data['users']))
+        if 'players' in data['users']:
+            print(type(data['users']['players']))
+            # Rest of your code for appending new_user_info
+        else:
+            print("there are no players")
+    else:
+        print('The key "users" is missing in the JSON data')
+    
+    #print(data['users']['players'])
+    data['users']['players'].append(new_user_info)
+
+    # Write the updated JSON data back to the file
+    with open('data.json', 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+    
+    return jsonify({'message': 'Data appended successfully'})
+
 if __name__ == "__main__":
     app.run() 
