@@ -11,6 +11,8 @@
 
     <h1>Training Schedule</h1>
 
+    <p>Add new events by clicking on the "Add New Event" button or select a slot in the table to add, update or delete an event.</p>
+
     <table>
         <thead>
             <tr>
@@ -79,7 +81,7 @@
         </tbody>
     </table>
 
-    <button onclick="openPopup()">Add New Class</button>
+    <button onclick="openPopup()">Add New Event</button>
 
     <div id="classPopup" class="popup">
         <label for="time">Select Time:</label>
@@ -108,6 +110,7 @@
 
         <label for="trainingClass">Select Training Class:</label>
         <select id="trainingClass">
+            <option value=" "> </option>
             <option value="Mobility">Mobility</option>
             <option value="Stamina">Stamina</option>
             <option value="Strength">Strength</option>
@@ -117,6 +120,16 @@
             <option value="Recovery">Recovery</option>
             <option value="Tactics">Tactics</option>
             <option value="TeamBuilding">Team Building</option>
+        </select>
+
+        <br>
+
+        <label for="location">Select Location:</label>
+        <select id="location">
+            <option value="Outdoor Sports Field">Outdoor Sports Field</option>
+            <option value="Gym">Gym</option>
+            <option value="Fitness Center">Fitness Center</option>
+            <option value="Multipurpose Hall">Multipurpose Hall</option>
         </select>
 
         <br>
