@@ -89,33 +89,21 @@ def upload_user():
             print(type(data['users'][0]['players']))
             # Rest of your code for appending new_user_info
             print('Successfully got players')
+            print(new_user_info)
+            print(data['users'][0])
+            data['users'][0]['players'].append(new_user_info)
+            print(data['users'][0])
+            print("successful append")
+            # Write the updated JSON data back to the file
+            with open('data/data.json', 'w') as json_file:
+                json.dump(data, json_file, indent=4)
         else:
             print("there are no players")
     else:
         print('The key "users" is missing in the JSON data')
     
-    #print(data['users']['players'])
-    #data['users']['players'].append(new_user_info)
-
-    # Write the updated JSON data back to the file
-    #with open('data.json', 'w') as json_file:
-        #json.dump(data, json_file, indent=4)
-    
     return jsonify({'message': 'Data appended successfully'})
 
-
-'''
-    # Load existing JSON data from file:
-    with open('data/data.json', 'r') as json_file:
-        data = json.load(json_file)
-    new_user_info = request.json.get('user_info')
-    print(type(data['users']))
-    print(data['users'])
-    print(data['users'][0])
-    print(data['users'][0]['players'])
-    
-    return jsonify({'message': 'Data appended successfully'})
-'''
 
 if __name__ == "__main__":
     app.run() 
