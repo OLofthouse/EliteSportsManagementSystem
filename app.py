@@ -137,5 +137,26 @@ def upload_coach():
     
     return jsonify({'message': 'Data appended successfully'})
 
+@app.route("/api/upload/delete/coach", methods=['PUT'])
+def deleteUser(): 
+
+    account_info = request.json.get('user_info'); 
+    print(account_info)
+    print(account_info['username'])
+
+    with open("data/data.json", "r") as file:
+        data = json.load(file) 
+    
+    print(data)
+    data['users'][1]['coaches'] = [coach for coach in data['users'][1]['coaches'] if coach.get('username') != account_info['username']]
+    print(data)
+
+    # Write modified JSON data back to the file
+    with open('data/data.json', 'w') as file:
+        json.dump(data, file, indent=4)
+
+
+    return jsonify({'message': 'account deleted successfully'})
+
 if __name__ == "__main__":
     app.run() 

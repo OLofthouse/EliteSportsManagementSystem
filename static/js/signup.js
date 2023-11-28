@@ -148,7 +148,7 @@ function validUsername() {
 
     if (this.readyState == 4 && this.status == 200) {
       strResponse = JSON.parse(this.responseText);
-      alert(strResponse.message)
+      //alert(strResponse.message)
       returnToLogin(); 
     }   
   }
