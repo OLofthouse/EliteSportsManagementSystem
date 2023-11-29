@@ -1,6 +1,7 @@
 const jsonFilePath = '/data/data.json'; 
 var usersObj = {}; 
 var currentUser = {}; 
+var currentType = {type: ""}; 
 
 /*This function returns the json file data, and stores user data in the
 usersObj object. This can then be accessed using usersObj.users.{username,
@@ -72,7 +73,8 @@ function buttonLoginClick() {
             if (usersObj.users[0].players[i].password === String(password)) {
                 //Correct login details.
                 currentUser = usersObj.users[0].players[i];  
-
+                
+                currentType.type = "player"; 
                 setCurrentUser(); 
                 window.location.assign('/userdashboard'); 
 
@@ -100,6 +102,7 @@ function buttonLoginClick() {
                 //Correct Login Details
                 currentUser = usersObj.users[1].coaches[j];
 
+                currentType.type = "coach"; 
                 setCurrentUser(); 
                 window.location.assign('/coachdashboard');
                  
@@ -131,7 +134,7 @@ signupLink.addEventListener('click', function(event) {
 This function will take the current user object and add it to a variable in the Flask app. This
 will mean that when loading other pages, we can grab the current user from anywhere in the program. */
 function setCurrentUser() {
-    console.log("Setting Current User");
+    console.log("Setting Current User & Type");
     
     let xhttp = new XMLHttpRequest(); 
     let url = '/api/set-current-user'; 
@@ -149,6 +152,20 @@ function setCurrentUser() {
     xhttp.setRequestHeader("Content-Type", "application/json")
     xhttp.send(data)
  
+    let xhttp2 = new XMLHttpRequest();
+    url = "/api/set-current-user-type";
+
+    xhttp2.onreadystatechange = function() {
+        if (this.readystate == 4 && this.status == 200) {
+            console.log("set user type")
+        }
+    }
+
+    xhttp2.open('PUT', url, true)
+    data = JSON.stringify(currentType)
+    xhttp2.setRequestHeader("Content-Type", "application/json")
+    xhttp2.send(data); 
+
 }
 
 //This function gets the current user info from the Flask app and stores it in Test Object,

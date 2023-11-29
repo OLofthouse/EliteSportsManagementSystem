@@ -59,6 +59,11 @@ label[for=name], label[for=dob], label[for=email], label[for=title], label[for=t
     cursor: pointer; 
 }
 
+.profile-box .delete-account-div {
+    display: flex; 
+    justify-content: space-between; 
+}
+
 .profile-box .profile-title p{
     font-size: 3rem; 
     margin: 0px; 

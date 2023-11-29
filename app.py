@@ -3,6 +3,7 @@ import sys, json, os
 
 app = Flask(__name__) 
 currentUserInfo = ""
+currentUserType = ""
 
 @app.route("/")
 def home():
@@ -28,9 +29,13 @@ def fixturelist():
 def resultslist(): 
     return render_template('resultslist.html')
 
-app.route('/trainingschedule')
+@app.route('/trainingschedule')
 def trainingschedule(): 
     return render_template('trainingschedule.html')
+
+@app.route('/updatedetails')
+def updateDetails(): 
+    return render_template('updatedetails.html')
 
 @app.route('/api/users')
 def returnUsers(): 
@@ -53,8 +58,8 @@ def returnUsers():
 def setCurrentUser(): 
     print('setting current user') 
     
-    messageOK = jsonify(message="Jokes Uploaded")
-    messageFAIL = jsonify(message="Jokes Not Uploaded, issue in the API")
+    messageOK = jsonify(message="User Uploaded")
+    messageFAIL = jsonify(message="User Not Uploaded, issue in the API")
 
     if request.is_json:
         req = request.get_json()
@@ -65,11 +70,35 @@ def setCurrentUser():
         return messageOK, 200
     else:
         return messageFAIL, 400
+    
+@app.route("/api/set-current-user-type", methods=['PUT'])
+def setCurrentUserType(): 
+
+    print('Setting current user Type')
+
+    messageOK = jsonify(message="Type Uploaded")
+    messageFAIL = jsonify(message="Type Not Uploaded, issue in the API")
+
+    if request.is_json:
+        req = request.get_json()
+        global currentUserType
+        currentUserType = req["type"]
+        print(currentUserType)
+
+        return messageOK, 200
+    else:
+        return messageFAIL, 400
+
 
 @app.route('/api/get-current-user')
 def getCurrentUser(): 
     global currentUserInfo
     return jsonify(currentUserInfo)
+
+@app.route('/api/get-current-user-type')
+def getCurrentUserType(): 
+    global currentUserType
+    return jsonify({"type": currentUserType})
 
 @app.route('/api/upload/signup/player', methods=['POST'])
 def upload_user():
@@ -155,6 +184,26 @@ def deleteUser():
     with open('data/data.json', 'w') as file:
         json.dump(data, file, indent=4)
 
+
+    return jsonify({'message': 'account deleted successfully'})
+
+@app.route('/api/upload/delete/player', methods=['PUT'])
+def deletePlayer(): 
+
+    account_info = request.json.get('user_info')
+    print(account_info)
+    print(account_info['username'])
+
+    with open("data/data.json", "r") as file:
+        data = json.load(file)
+
+    print(data)
+    data['users'][0]['players'] = [player for player in data['users'][0]['players'] if player.get('username') != account_info['username']]
+    print(data)
+
+    #Write back to file
+    with open("data/data.json", "w") as file: 
+        json.dump(data, file, indent=4)
 
     return jsonify({'message': 'account deleted successfully'})
 

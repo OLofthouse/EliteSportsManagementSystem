@@ -62,5 +62,23 @@ function onClickDeleteAccount() {
 
 }
 
+/* This function will transport the user to another page, where the user will be able to 
+update their current details that are stored on the db. All this page needs to do it to 
+change the window location alongside ensuring the current user details are correct */
+function onClickUpdateAccount() {
+  console.log("Updating Details");
+  window.location =  "http://127.0.0.1:5000/updatedetails"; 
+}
+
+/* This function will return the user to the login screen, and because the current user
+details are reset every time a user logs in, this is the same as wiping the details in a 
+system of our scope. */
+function onClickLogOut() {
+  console.log("Logging Out");
+  window.location =  "http://127.0.0.1:5000/";
+}
+
 document.getElementById('delete-account-button').addEventListener("click", onClickDeleteAccount);
+document.getElementById('update-account-button').addEventListener("click", onClickUpdateAccount);
+document.getElementById('log-out-button').addEventListener("click", onClickLogOut);
 window.onload = getCurrentUser; 
