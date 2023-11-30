@@ -29,6 +29,12 @@
                     "name": "Standard Name",
                     "email": "test@test.com",
                     "dob": "1111-11-11"
+                },
+                {
+                    "username": "",
+                    "dob": "",
+                    "email": "",
+                    "name": ""
                 }
             ]
         },
@@ -43,10 +49,10 @@
                 },
                 {
                     "username": "TestCoach",
-                    "password": "password",
-                    "name": "Test Coach",
+                    "dob": "1923-11-16",
                     "email": "test@coach.com",
-                    "dob": "1978-11-11"
+                    "name": "Test Coach",
+                    "password": "password"
                 }
             ]
         }
