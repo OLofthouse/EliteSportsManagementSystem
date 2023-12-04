@@ -62,12 +62,27 @@ function loadUserInfo() {
     
 }
 
+/* This function will relocate the user to the training schedule page */
+function onClickTrainingSchedule() {
+  window.location = "http://127.0.0.1:5000/trainingschedule"; 
+}
+
 /* This function will transport the user to another page, where the user will be able to 
 update their current details that are stored on the db. All this page needs to do it to 
 change the window location alongside ensuring the current user details are correct */
 function onClickUpdateAccount() {
   console.log("Updating Details");
   window.location =  "http://127.0.0.1:5000/updatedetails"; 
+}
+
+/* This function will take the user to the results page, where they can see past results*/
+function onClickResultsPage() {
+  window.location = "http://127.0.0.1:5000/resultslist"; 
+}
+
+/* This function will take the user to a fixtures page, where they can see upcoming fixtures */
+function onClickFixturesPage() {
+  window.location = "http://127.0.0.1:5000/fixturelist"; 
 }
 
 /* This function will return the user to the login screen, and because the current user
@@ -78,7 +93,10 @@ function onClickLogOut() {
   window.location =  "http://127.0.0.1:5000/";
 }
 
+document.getElementById("training-schedule-link").addEventListener("click", onClickTrainingSchedule); 
 document.getElementById('delete-account-button').addEventListener("click", onClickDeleteAccount);
 document.getElementById('update-account-button').addEventListener("click", onClickUpdateAccount);
+document.getElementById('link-results').addEventListener('click', onClickResultsPage);
+document.getElementById('link-fixtures').addEventListener('click', onClickFixturesPage);
 document.getElementById('log-out-button').addEventListener("click", onClickLogOut);
 window.onload = getCurrentUser; 

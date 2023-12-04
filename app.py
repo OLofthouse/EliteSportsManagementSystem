@@ -207,5 +207,16 @@ def deletePlayer():
 
     return jsonify({'message': 'account deleted successfully'})
 
+@app.route("/api/upload/trainingsession", methods=['POST']) 
+def updateTrainingSessions(): 
+
+    data = request.json.get('data')
+
+    #Write back to file
+    with open("data/data.json", "w") as file: 
+        json.dump(data, file, indent=4)
+
+    return jsonify({"message": "all data updated"})
+
 if __name__ == "__main__":
     app.run() 

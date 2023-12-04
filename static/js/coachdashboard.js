@@ -36,6 +36,11 @@ function loadUserInfo() {
     
 }
 
+/* This function will relocate the user to the training schedule page */
+function onClickTrainingSchedule() {
+  window.location = "http://127.0.0.1:5000/trainingschedule"; 
+}
+
 /* This function should send a http request to the server containing the current
 user info, and the server should then delete the record containing the current
 user information from the database. Then the window should reload to the signin. */
@@ -70,6 +75,16 @@ function onClickUpdateAccount() {
   window.location =  "http://127.0.0.1:5000/updatedetails"; 
 }
 
+/* This function will take the user to the results page, where they can see past results*/
+function onClickResultsPage() {
+  window.location = "http://127.0.0.1:5000/resultslist"; 
+}
+
+/* This function will take the user to a fixtures page, where they can see upcoming fixtures */
+function onClickFixturesPage() {
+  window.location = "http://127.0.0.1:5000/fixturelist"; 
+}
+
 /* This function will return the user to the login screen, and because the current user
 details are reset every time a user logs in, this is the same as wiping the details in a 
 system of our scope. */
@@ -78,7 +93,10 @@ function onClickLogOut() {
   window.location =  "http://127.0.0.1:5000/";
 }
 
+document.getElementById("training-schedule-link").addEventListener("click", onClickTrainingSchedule);
 document.getElementById('delete-account-button').addEventListener("click", onClickDeleteAccount);
 document.getElementById('update-account-button').addEventListener("click", onClickUpdateAccount);
+document.getElementById('link-results').addEventListener('click', onClickResultsPage);
+document.getElementById('link-fixtures').addEventListener('click', onClickFixturesPage);
 document.getElementById('log-out-button').addEventListener("click", onClickLogOut);
 window.onload = getCurrentUser; 
