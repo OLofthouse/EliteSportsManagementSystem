@@ -211,6 +211,7 @@ def deletePlayer():
 def updateTrainingSessions(): 
 
     data = request.json.get('data')
+    print(data['trainingschedule'])
 
     #Write back to file
     with open("data/data.json", "w") as file: 

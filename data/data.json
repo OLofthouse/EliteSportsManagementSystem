@@ -3,62 +3,62 @@
     "results": [],
     "trainingschedule": [
         {
-            "class": "Strength",
+            "class": "",
             "id": "0 0",
             "location": "Gym"
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "1 0",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "2 0",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "3 0",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "4 0",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "5 0",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "6 0",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "0 1",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "1 1",
-            "location": ""
+            "location": "Gym"
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "2 1",
-            "location": ""
+            "location": "Gym"
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "3 1",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "4 1",
             "location": ""
         },
@@ -68,47 +68,47 @@
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "6 1",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "0 2",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "1 2",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "2 2",
             "location": ""
         },
         {
             "class": "",
             "id": "3 2",
-            "location": ""
+            "location": "Gym"
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "4 2",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "5 2",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "6 2",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "0 3",
             "location": ""
         },
@@ -118,47 +118,47 @@
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "2 3",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "3 3",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "4 3",
-            "location": ""
+            "location": "Gym"
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "5 3",
-            "location": ""
+            "location": "Gym"
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "6 3",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "0 4",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "1 4",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "2 4",
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "3 4",
             "location": ""
         },
@@ -168,7 +168,7 @@
             "location": ""
         },
         {
-            "class": "Test",
+            "class": "",
             "id": "5 4",
             "location": ""
         },

@@ -185,6 +185,32 @@ function openPopupEdit(cell) {
   document.getElementById('location').selectedIndex = arr[1];  
 }
 
+/* This function should update the json object with the details of the class that has just been 
+created. This should be done before saving the class so we can just get each element within the 
+document and read the values from it. */
+function saveClassManagement() {
+  //console.log("management"); 
+
+  let newClass = document.getElementById('trainingClass').value;
+  let newLocation = document.getElementById('location').value;
+
+  //Should check for changed cell id, if cell id hasnt changed, then fine. 
+
+  //No change in the cell id
+  for (let i = 0; i < jsonData.trainingschedule.length; i++) {
+    if (currentCellId === jsonData.trainingschedule[i].id) {  
+      console.log(jsonData.trainingschedule[i].class + " : " + newClass);
+      console.log(jsonData.trainingschedule[i].location + " : " + newLocation); 
+      console.log(jsonData.trainingschedule[i]); 
+      jsonData.trainingschedule[i].class = newClass;
+      jsonData.trainingschedule[i].location = newLocation;  
+    }
+  }
+  
+  console.log(newClass, newLocation); 
+  console.log(jsonData);
+}
+
 /* This function returns the window location to dashboard, dependant on user type. 
 This function also needs to upload the new json file if anything has been changed.*/
 function returnToDashboard() {
