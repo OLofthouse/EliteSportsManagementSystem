@@ -3,81 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/userdashboard.css" rel="stylesheet" type="text/css"> 
     <title>Sports Organization Dashboard</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 20px;
-            height: 100vh;
-        }
-
-        .left-container {
-          height: 50vh;
-        }
-
-        .left-container, .right-container {
-            flex: 1 0 calc(50% - 20px); /* Half of the page minus margin */
-            box-sizing: border-box;
-        }
-
-        .results-box, .fixtures-box {
-          height: 100%;
-        }
-
-        .profile-box, .fixtures-box, .results-box, .training-schedule-box {
-            background-color: #fff;
-            padding: 20px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        .profile-box {
-          height: 91vh;
-        }
-
-        .training-schedule-box {
-          width: 100%;
-          height: 40vh;
-        }
-
-        .top-container, .bottom-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .top-container .left-container, .top-container .right-container {
-            flex: 1 0 calc(50% - 10px); /* Half of the top container minus margin */
-            box-sizing: border-box;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -88,19 +15,28 @@
                     <div class="profile-photo"></div>
                     <div class="profile-info">
                         <label for="name">Name</label>
-                        <p>John Doe</p>
+                        <p id="user-info-name">John Doe</p>
 
                         <label for="dob">Date of Birth</label>
-                        <p>MM/DD/YYYY</p>
+                        <p id="user-info-dob">MM/DD/YYYY</p>
 
                         <label for="email">Email Address</label>
-                        <p>john.doe@example.com</p>
+                        <p id="user-info-email">john.doe@example.com</p>
+
 
                         <label for="title">Title</label>
                         <p>Player</p>
+
+                        <label for="team">Team</label>
+                        <p>Bournemouth 1sts</p>
+
+                        <label for="position">Position</label>
+                        <p>Shooting Guard</p>
+
+                        <label for="number">Number</label>
+                        <p>22</p>
                     </div>
                 </div>
-                <a href="#" class="details-link">See more details</a>
             </div>
         </div>
 
@@ -175,6 +111,37 @@
             <div class="bottom-container">
                 <div class="training-schedule-box">
                     <div class="box-header">Upcoming Training Schedule</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Coach</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-01-05</td>
+                                <td>Team X</td>
+                                <td>John Lewis</td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-05</td>
+                                <td>Team Y</td>
+                                <td>John Lewis</td>
+                            </tr>
+                            <tr>
+                                <td>2023-03-05</td>
+                                <td>Team Z</td>
+                                <td>John Lewis</td>
+                            </tr>
+                            <tr>
+                                <td>2023-04-05</td>
+                                <td>Team W</td>
+                                <td>John Lewis</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div class="box-summary">
                         <!-- Training schedule summary content -->
                     </div>
@@ -183,5 +150,8 @@
             </div>
         </div>
     </div>
+
+    <!--SCRIPTS-->
+    <script type="module" src="/static/js/userdashboard.js"></script>
 </body>
 </html>

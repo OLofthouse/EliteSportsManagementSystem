@@ -73,6 +73,7 @@ function buttonLoginClick() {
                 //Correct login details.
                 currentUser = usersObj.users[0].players[i];  
 
+                setCurrentUser(); 
                 window.location.assign('/userdashboard'); 
 
             } else {
@@ -99,6 +100,7 @@ function buttonLoginClick() {
                 //Correct Login Details
                 currentUser = usersObj.users[1].coaches[j];
 
+                setCurrentUser(); 
                 window.location.assign('/coachdashboard');
                  
             } else {
@@ -112,6 +114,63 @@ function buttonLoginClick() {
     }
 
     userFound ? null : incorrectUsername(); //Ternary Operator
+
+}
+
+/* Set up the link to the sign-up page: this function should disallow the link from being clicked
+and replace it with a flask call and add the signup to the url. Flask should then return the 
+template for the signup page. */
+const signupLink = document.getElementById('signup-link'); 
+signupLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log("User Directing to Signup Page"); 
+    window.location.assign('/signup'); 
+});
+
+/* Functionality for setting the current user server side.
+This function will take the current user object and add it to a variable in the Flask app. This
+will mean that when loading other pages, we can grab the current user from anywhere in the program. */
+function setCurrentUser() {
+    console.log("Setting Current User");
+    
+    let xhttp = new XMLHttpRequest(); 
+    let url = '/api/set-current-user'; 
+
+    xhttp.onreadystatchange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+          strResponse = JSON.parse(this.responseText);
+          alert(strResponse.message)
+        }   
+      }
+    
+    xhttp.open('PUT', url, true)
+    var data = JSON.stringify(currentUser)
+    xhttp.setRequestHeader("Content-Type", "application/json")
+    xhttp.send(data)
+ 
+}
+
+//This function gets the current user info from the Flask app and stores it in Test Object,
+//Change the test object to a current user object, and we can dynamically set any user info
+//on any of the HTML pages. 
+function getCurrentUser() {
+    let testObject = {}; 
+
+    //Create a HTTP request to talk to the Flask app. 
+    let xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange = function() {
+       if (this.readyState == 4 && this.status == 200) {
+            testObject = JSON.parse(this.responseText);
+            console.log(this.responseText); 
+            console.log(testObject); 
+         } else {
+           console.log('xhttp request problem occurred', this.status); 
+         }
+    }
+
+    xhttp.open("GET", "api/get-current-user", true); 
+    xhttp.send(); 
 
 }
 

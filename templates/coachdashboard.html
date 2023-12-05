@@ -1,1 +1,158 @@
-<p>Coach Dashboard</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/coachdashboard.css" rel="stylesheet" type="text/css"> 
+
+    <title>Sports Organization Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-container">
+            <div class="profile-box">
+                <div class="profile-title">Profile</div>
+                <div class="profile-content">
+                    <div class="profile-photo"></div>
+                    <div class="profile-info">
+                        <label for="name">Name</label>
+                        <p id="user-info-name">John Doe</p>
+
+                        <label for="dob">Date of Birth</label>
+                        <p id="user-info-dob">MM/DD/YYYY</p>
+
+                        <label for="email">Email Address</label>
+                        <p id="user-info-email">john.doe@example.com</p>
+
+
+                        <label for="title">Title</label>
+                        <p>Coach</p>
+
+                        <label for="team">Team</label>
+                        <p>Bournemouth 1sts</p>
+
+                        <label for="position">Position</label>
+                        <p>Shooting Guard</p>
+
+                        <label for="number">Number</label>
+                        <p>22</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <div class="top-container">
+                <div class="left-container">
+                    <div class="results-box">
+                        <div class="box-header">Results</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Team</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023-01-05</td>
+                                    <td>Team X</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-02-05</td>
+                                    <td>Team Y</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-03-05</td>
+                                    <td>Team Z</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-04-05</td>
+                                    <td>Team W</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="details-link">See more details</a>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="fixtures-box">
+                        <div class="box-header">Fixtures</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Team</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023-01-01</td>
+                                    <td>Team A</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-02-01</td>
+                                    <td>Team B</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-03-01</td>
+                                    <td>Team C</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-04-01</td>
+                                    <td>Team D</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="details-link">See more details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-container">
+                <div class="training-schedule-box">
+                    <div class="box-header">Upcoming Training Schedule</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Coach</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-01-05</td>
+                                <td>Team X</td>
+                                <td>John Lewis</td>
+                            </tr>
+                            <tr>
+                                <td>2023-02-05</td>
+                                <td>Team Y</td>
+                                <td>John Lewis</td>
+                            </tr>
+                            <tr>
+                                <td>2023-03-05</td>
+                                <td>Team Z</td>
+                                <td>John Lewis</td>
+                            </tr>
+                            <tr>
+                                <td>2023-04-05</td>
+                                <td>Team W</td>
+                                <td>John Lewis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="box-summary">
+                        <!-- Training schedule summary content -->
+                    </div>
+                    <a href="#" class="details-link">See more details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SCRIPTS-->
+    <script type="module" src="/static/js/userdashboard.js"></script>
+</body>
+</html>

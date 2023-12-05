@@ -1,14 +1,57 @@
-{"users": [
-    {"players": [
-        {"username": "Oscar", "password": "password"},
-        {"username": "Ralph", "password": "password123"}, 
-        {"username": "Flo", "password": "123456789"}
-    ]},
-    {"coaches": [
-        {"username": "Hannah", "password": "1234"}
-    ]}
-]}
-
-
-
-
+{
+    "users": [
+        {
+            "players": [
+                {
+                    "username": "Oscar",
+                    "password": "password",
+                    "name": "Oscar Lofthouse",
+                    "email": "oscar@lofthouse.com",
+                    "dob": "01-01-2000"
+                },
+                {
+                    "username": "Ralph",
+                    "password": "password123",
+                    "name": "Ralph Smith",
+                    "email": "ralph@smith.com",
+                    "dob": "02-02-2000"
+                },
+                {
+                    "username": "Flo",
+                    "password": "123456789",
+                    "name": "Flo Ashworth",
+                    "email": "flo@ashworth.com",
+                    "dob": "03-03-2000"
+                },
+                {
+                    "username": "Test",
+                    "password": "password",
+                    "name": "Standard Name",
+                    "email": "test@test.com",
+                    "dob": "1111-11-11"
+                }
+            ]
+        },
+        {
+            "coaches": [
+                {
+                    "username": "Hannah",
+                    "password": "1234",
+                    "name": "Hannah Gorry",
+                    "email": "hannah@gorry.com",
+                    "dob": "04-04-2000"
+                },
+                {
+                    "username": "TestCoach",
+                    "password": "password",
+                    "name": "Test Coach",
+                    "email": "test@coach.com",
+                    "dob": "2000-10-10"
+                }
+            ]
+        }
+    ],
+    "fixtures": [],
+    "results": [],
+    "trainingschedule": []
+}
