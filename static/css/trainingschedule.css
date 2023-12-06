@@ -33,8 +33,19 @@ th {
 }
 
 button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #006B8F;
+    cursor: pointer;
     margin-top: 20px;
     padding: 10px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: #002e3d;
 }
 
 .popup {
