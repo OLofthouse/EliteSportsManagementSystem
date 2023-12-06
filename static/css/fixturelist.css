@@ -1,6 +1,6 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
+  font-family: Lato, sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
 }
@@ -17,7 +17,7 @@ h1 {
 }
 
 .fixture-box {
-  background-color: #fff;
+  background-color: #828a95c3;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto; /* Center the box horizontally */
