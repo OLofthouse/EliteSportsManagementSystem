@@ -148,7 +148,8 @@ function validUsername() {
 
     if (this.readyState == 4 && this.status == 200) {
       strResponse = JSON.parse(this.responseText);
-      alert(strResponse.message)
+      //alert(strResponse.message)
+      console.log("Sucessfully created user account"); 
       returnToLogin(); 
     }   
   }
@@ -158,6 +159,9 @@ function validUsername() {
   xhttp.setRequestHeader("Content-Type", "application/json")
   xhttp.send(data)
   
+
+  console.log("Returning to Login manually"); 
+  returnToLogin(); 
 
 }
 

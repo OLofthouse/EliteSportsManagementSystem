@@ -1,57 +1,239 @@
 {
+    "fixtures": [],
+    "results": [],
+    "trainingschedule": [
+        {
+            "class": "",
+            "id": "0 0",
+            "location": "Gym"
+        },
+        {
+            "class": "",
+            "id": "1 0",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "2 0",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "3 0",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "4 0",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "5 0",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "6 0",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "0 1",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "1 1",
+            "location": "Gym"
+        },
+        {
+            "class": "",
+            "id": "2 1",
+            "location": "Gym"
+        },
+        {
+            "class": "",
+            "id": "3 1",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "4 1",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "5 1",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "6 1",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "0 2",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "1 2",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "2 2",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "3 2",
+            "location": "Gym"
+        },
+        {
+            "class": "",
+            "id": "4 2",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "5 2",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "6 2",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "0 3",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "1 3",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "2 3",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "3 3",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "4 3",
+            "location": "Gym"
+        },
+        {
+            "class": "",
+            "id": "5 3",
+            "location": "Gym"
+        },
+        {
+            "class": "",
+            "id": "6 3",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "0 4",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "1 4",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "2 4",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "3 4",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "4 4",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "5 4",
+            "location": ""
+        },
+        {
+            "class": "",
+            "id": "6 4",
+            "location": ""
+        }
+    ],
     "users": [
         {
             "players": [
                 {
-                    "username": "Oscar",
-                    "password": "password",
-                    "name": "Oscar Lofthouse",
+                    "dob": "01-01-2000",
                     "email": "oscar@lofthouse.com",
-                    "dob": "01-01-2000"
-                },
-                {
-                    "username": "Ralph",
-                    "password": "password123",
-                    "name": "Ralph Smith",
-                    "email": "ralph@smith.com",
-                    "dob": "02-02-2000"
-                },
-                {
-                    "username": "Flo",
-                    "password": "123456789",
-                    "name": "Flo Ashworth",
-                    "email": "flo@ashworth.com",
-                    "dob": "03-03-2000"
-                },
-                {
-                    "username": "Test",
+                    "name": "Oscar Lofthouse",
                     "password": "password",
-                    "name": "Standard Name",
+                    "username": "Oscar"
+                },
+                {
+                    "dob": "02-02-2000",
+                    "email": "ralph@smith.com",
+                    "name": "Ralph Smith",
+                    "password": "password123",
+                    "username": "Ralph"
+                },
+                {
+                    "dob": "03-03-2000",
+                    "email": "flo@ashworth.com",
+                    "name": "Flo Ashworth",
+                    "password": "123456789",
+                    "username": "Flo"
+                },
+                {
+                    "dob": "1111-11-11",
                     "email": "test@test.com",
-                    "dob": "1111-11-11"
+                    "name": "Standard Name",
+                    "password": "password",
+                    "username": "Test"
+                },
+                {
+                    "dob": "",
+                    "email": "",
+                    "name": "",
+                    "username": ""
                 }
             ]
         },
         {
             "coaches": [
                 {
-                    "username": "Hannah",
-                    "password": "1234",
-                    "name": "Hannah Gorry",
+                    "dob": "04-04-2000",
                     "email": "hannah@gorry.com",
-                    "dob": "04-04-2000"
+                    "name": "Hannah Gorry",
+                    "password": "1234",
+                    "username": "Hannah"
                 },
                 {
-                    "username": "TestCoach",
-                    "password": "password",
-                    "name": "Test Coach",
+                    "dob": "1923-11-16",
                     "email": "test@coach.com",
-                    "dob": "2000-10-10"
+                    "name": "Test Coach",
+                    "password": "password",
+                    "username": "TestCoach"
                 }
             ]
         }
-    ],
-    "fixtures": [],
-    "results": [],
-    "trainingschedule": []
+    ]
 }

@@ -1,0 +1,179 @@
+{
+  "trainingschedule": [
+    {
+      "id": "0 0",
+      "class": "Test Class", 
+      "location": ""
+    },
+    {
+      "id": "1 0",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "2 0",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "3 0",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "4 0",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "5 0",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "6 0",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "0 1",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "1 1",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "2 1",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "3 1",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "4 1",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "5 1",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "6 1",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "0 2",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "1 2",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "2 2",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "3 2",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "4 2",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "5 2",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "6 2",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "0 3",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "1 3",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "2 3",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "3 3",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "4 3",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "5 3",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "6 3",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "0 4",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "1 4",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "2 4",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "3 4",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "4 4",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "5 4",
+      "class": "", 
+      "location": ""
+    },
+    {
+      "id": "6 4",
+      "class": "", 
+      "location": ""
+    }
+  ]
+}

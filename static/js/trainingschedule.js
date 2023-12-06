@@ -40,6 +40,8 @@ function saveClass() {
         document.getElementById(cellId).innerHTML = selectedClass;
     }
 
+    console.log("original"); 
+
     // Close the popup
     closePopup();
 }

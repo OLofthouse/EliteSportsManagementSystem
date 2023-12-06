@@ -81,10 +81,11 @@
         </tbody>
     </table>
 
-    <button onclick="openPopup()">Add New Event</button>
+    <button id="addEventButton" onclick="openPopup()/*, openPopupManagement()*/">Add New Event</button>
+    <button id="returnToDashboard" onclick="returnToDashboard()">Return To Dashboard & Save</button>
 
     <div id="classPopup" class="popup">
-        <label for="time">Select Time:</label>
+        <label id="l-time" for="time">Time:</label>
         <select id="time">
             <option value="9:00 AM - 10:30 AM">9:00 AM - 10:30 AM</option>
             <option value="11:00 AM - 12:30 PM">11:00 AM - 12:30 PM</option>
@@ -95,7 +96,7 @@
 
         <br>
 
-        <label for="day">Select Day:</label>
+        <label id="l-day" for="day">Day:</label>
         <select id="day">
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
@@ -108,7 +109,7 @@
 
         <br>
 
-        <label for="trainingClass">Select Training Class:</label>
+        <label id="l-class" for="trainingClass">Training Class:</label>
         <select id="trainingClass">
             <option value=" "> </option>
             <option value="Mobility">Mobility</option>
@@ -124,7 +125,7 @@
 
         <br>
 
-        <label for="location">Select Location:</label>
+        <label id="l-location" for="location">Location:</label>
         <select id="location">
             <option value="Outdoor Sports Field">Outdoor Sports Field</option>
             <option value="Gym">Gym</option>
@@ -134,14 +135,13 @@
 
         <br>
 
-        <button onclick="saveClass()">Save</button>
-        <button onclick="closePopup()">Cancel</button>
+        <button id="savesessionbtn" onclick="saveClassManagement(), saveClass()">Save</button>
+        <button id="cancelsessionbtn" onclick="closePopup()">Cancel</button>
+        <button id="deletesessionbtn" onclick="deleteSession()">Delete</button>
     </div>
 
-    <script>
-        
-    </script>
     <script src="../static/js/trainingschedule.js"></script>
+    <script src="../static/js/trainingmanagement.js"></script>
 
 </body>
 </html>
