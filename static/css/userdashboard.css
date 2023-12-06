@@ -1,5 +1,5 @@
 body {
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -102,5 +102,17 @@ th {
 }
 
 .details-link{
+    color: #44BDBD;
+}
+
+#delete-account-button{
+    color: #44BDBD;
+}
+
+#update-account-button{
+    color: #44BDBD;
+}
+
+#log-out-button{
     color: #44BDBD;
 }
