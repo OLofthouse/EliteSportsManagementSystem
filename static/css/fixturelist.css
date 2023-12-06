@@ -85,3 +85,20 @@ h1 {
   background-color: #eee;
   border-radius: 5px;
 }
+
+.return-button {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 2rem; 
+}
+
+.return-button button {
+  padding: 1rem 2rem; 
+  border-radius: 0.5rem; 
+}
+
+.return-button button:hover {
+  cursor: pointer; 
+  background-color:rgba(0, 0, 0, 0.1); 
+}

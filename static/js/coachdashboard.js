@@ -22,32 +22,6 @@ function getCurrentUser() {
 
 }
 
-/* This function should send a http request to the server containing the current
-user info, and the server should then delete the record containing the current
-user information from the database. Then the window should reload to the signin. */
-function onClickDeleteAccount() {
-
-  let xhttp = new XMLHttpRequest();
-  let url = "/api/upload/delete/player";
-  let user_info = {'user_info': currentUserObject};
-
-  xhttp.onreadystatechange = function() {
-
-    if (this.readyState == 4 && this.status == 200) {
-      //strResponse = JSON.parse(this.responseText); 
-      alert("Account Deleted!"); 
-      window.location = "http://127.0.0.1:5000/";
-    }
-
-  }
-
-  xhttp.open('PUT', url, true); 
-  let data = JSON.stringify(user_info);
-  xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.send(data);
-
-}
-
 /* Function to dynamically load in the current user info into the userdashboard page 
    NOTE: If ids on the html page from copy pasting ai code, update ids within the 
    profile section of the code so that we can still update them. */
@@ -65,6 +39,32 @@ function loadUserInfo() {
 /* This function will relocate the user to the training schedule page */
 function onClickTrainingSchedule() {
   window.location = "http://127.0.0.1:5000/trainingschedule"; 
+}
+
+/* This function should send a http request to the server containing the current
+user info, and the server should then delete the record containing the current
+user information from the database. Then the window should reload to the signin. */
+function onClickDeleteAccount() {
+
+  let xhttp = new XMLHttpRequest();
+  let url = "/api/upload/delete/coach";
+  let user_info = {'user_info': currentUserObject};
+
+  xhttp.onreadystatechange = function() {
+
+    if (this.readyState == 4 && this.status == 200) {
+      //strResponse = JSON.parse(this.responseText); 
+      alert("Account Deleted!"); 
+      window.location = "http://127.0.0.1:5000/";
+    }
+
+  }
+
+  xhttp.open('PUT', url, true); 
+  let data = JSON.stringify(user_info);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.send(data);
+
 }
 
 /* This function will transport the user to another page, where the user will be able to 
@@ -93,7 +93,7 @@ function onClickLogOut() {
   window.location =  "http://127.0.0.1:5000/";
 }
 
-document.getElementById("training-schedule-link").addEventListener("click", onClickTrainingSchedule); 
+document.getElementById("training-schedule-link").addEventListener("click", onClickTrainingSchedule);
 document.getElementById('delete-account-button').addEventListener("click", onClickDeleteAccount);
 document.getElementById('update-account-button').addEventListener("click", onClickUpdateAccount);
 document.getElementById('link-results').addEventListener('click', onClickResultsPage);
