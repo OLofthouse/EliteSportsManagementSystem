@@ -5,7 +5,6 @@ body {
     padding: 0;
   }
 
-
 h1 {
   text-align: center;
   margin-top: 30px;
@@ -18,7 +17,7 @@ h1 {
 }
 
 .fixture-box {
-  background-color: #fff;
+  background-color: #828a95c3;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto; /* Center the box horizontally */
@@ -148,11 +147,13 @@ h1 {
 }
 
 .return-button button {
+  color: #fff;
+  background-color: #006B8F;
   padding: 1rem 2rem; 
   border-radius: 0.5rem; 
 }
 
 .return-button button:hover {
   cursor: pointer; 
-  background-color:rgba(0, 0, 0, 0.1); 
+  background-color: #002e3d; 
 }
