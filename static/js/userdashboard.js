@@ -90,16 +90,29 @@ function loadUserInfo() {
 function loadTableInfo() {
 
   document.getElementById('f-r1-d').innerHTML = data.fixtures[0].date;
-  document.getElementById('f-r1-t').innerHTML = data.fixtures[0].team1; 
+  document.getElementById('f-r1-t').innerHTML = data.fixtures[0].team2; 
 
   document.getElementById('f-r2-d').innerHTML = data.fixtures[1].date;
   document.getElementById('f-r2-t').innerHTML = data.fixtures[1].team1; 
 
   document.getElementById('f-r3-d').innerHTML = data.fixtures[2].date;
-  document.getElementById('f-r3-t').innerHTML = data.fixtures[2].team1; 
+  document.getElementById('f-r3-t').innerHTML = data.fixtures[2].team2; 
 
   document.getElementById('f-r4-d').innerHTML = data.fixtures[3].date;
   document.getElementById('f-r4-t').innerHTML = data.fixtures[3].team1;
+
+  //Results table
+  document.getElementById('r-r1-t').innerHTML = data.results[0].team1; 
+  document.getElementById('r-r1-s').innerHTML = (data.results[0].team1Score + " : " + data.results[0].team2Score); 
+
+  document.getElementById('r-r2-t').innerHTML = data.results[1].team2; 
+  document.getElementById('r-r2-s').innerHTML = (data.results[1].team1Score + " : " + data.results[1].team2Score); 
+
+  document.getElementById('r-r3-t').innerHTML = data.results[2].team1; 
+  document.getElementById('r-r3-s').innerHTML = (data.results[2].team1Score + " : " + data.results[2].team2Score); 
+
+  document.getElementById('r-r4-t').innerHTML = data.results[3].team2; 
+  document.getElementById('r-r4-s').innerHTML = (data.results[3].team1Score + " : " + data.results[3].team2Score); 
 
 
 }

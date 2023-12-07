@@ -93,7 +93,7 @@
         {
             "class": "",
             "id": "6 0",
-            "location": ""
+            "location": "Gym"
         },
         {
             "class": "",
@@ -223,7 +223,7 @@
         {
             "class": "Stamina",
             "id": "4 4",
-            "location": "Gym"
+            "location": "Fitness Center"
         },
         {
             "class": "",
@@ -290,6 +290,13 @@
                     "name": "Test Coach",
                     "password": "password",
                     "username": "TestCoach"
+                },
+                {
+                    "dob": "1925-09-06",
+                    "email": "u2ser@test.com",
+                    "name": "Test User",
+                    "password": "password",
+                    "username": "TestUser"
                 }
             ]
         }
