@@ -1,0 +1,28 @@
+{
+  "fixtures" : [
+    {
+      "team1" : "Bournemouth 1s",
+      "team2" : "Bath 3s",
+      "date" : "2023-12-10",
+      "time" : "15:00"
+    },
+    {
+      "team1" : "Exeter 1s",
+      "team2" : "Bournemouth 1s",
+      "date" : "2023-12-18",
+      "time" : "13:00"
+    },
+    {
+      "team1" : "Bournemouth 1s",
+      "team2" : "Bristol 1s",
+      "date" : "2023-12-22",
+      "time" : "12:00"
+    },
+    {
+      "team1" : "Southampton 1s",
+      "team2" : "Bournemouth 1s",
+      "date" : "2023-12-22",
+      "time" : "3:00"
+    }
+  ]
+}

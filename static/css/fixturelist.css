@@ -68,6 +68,60 @@ h1 {
   font-size: 14px;
 }
 
+.team-name p {
+  margin: 0px; 
+  font-weight: bold;
+  font-size: 14px; 
+}
+
+#f1-tl1,
+#f2-tl2,
+#f3-tl1,
+#r1-tl2,
+#r2-tl1,
+#r3-tl2 {
+  background-image: url("../team-logos/Teambu.png");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+#f1-tl2 {
+  background-image: url("../team-logos/Bath.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+#f2-tl1,
+#r1-tl1 {
+  background-image: url("../team-logos/Exeter.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+#f3-tl2 {
+  background-image: url("../team-logos/Bristol.png");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+#r2-tl2 {
+  background-image: url('../team-logos/Southampton.jpg');
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+#r3-tl1 {
+  background-image: url('../team-logos/Portsmouth.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
 /* Results page */
 .team-scores {
   display: flex;

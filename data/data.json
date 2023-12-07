@@ -1,9 +1,67 @@
 {
-    "fixtures": [],
-    "results": [],
+    "fixtures": [
+        {
+            "date": "2023-12-10",
+            "team1": "Bournemouth 1s",
+            "team2": "Bath 3s",
+            "time": "15:00"
+        },
+        {
+            "date": "2023-12-18",
+            "team1": "Exeter 1s",
+            "team2": "Bournemouth 1s",
+            "time": "13:00"
+        },
+        {
+            "date": "2023-12-22",
+            "team1": "Bournemouth 1s",
+            "team2": "Bristol 1s",
+            "time": "12:00"
+        },
+        {
+            "date": "2023-12-22",
+            "team1": "Southampton 1s",
+            "team2": "Bournemouth 1s",
+            "time": "3:00"
+        }
+    ],
+    "results": [
+        {
+          "team1" : "Exeter 1s", 
+          "team2" : "Bournemouth 1s",
+          "team1Score" : 2, 
+          "team2Score" : 2,
+          "date" : "2023-12-02",
+          "time" : "14:00"
+        },
+        {
+          "team1" : "Bournemouth 1s", 
+          "team2" : "Southampton 1s",
+          "team1Score" : 2, 
+          "team2Score" : 1,
+          "date" : "2023-11-23",
+          "time" : "15:00"
+        },
+        {
+          "team1" : "Portsmouth 2s", 
+          "team2" : "Bournemouth 1s",
+          "team1Score" : 3, 
+          "team2Score" : 1,
+          "date" : "2023-11-20",
+          "time" : "12:00"
+        },
+        {
+          "team1" : "Bournemouth 1s", 
+          "team2" : "Chichester 1s",
+          "team1Score" : 2, 
+          "team2Score" : 0,
+          "date" : "2023-10-28",
+          "time" : "15:00"
+        }
+      ],
     "trainingschedule": [
         {
-            "class": "",
+            "class": "Tactics",
             "id": "0 0",
             "location": "Gym"
         },
@@ -13,9 +71,9 @@
             "location": ""
         },
         {
-            "class": "",
+            "class": "Mobility",
             "id": "2 0",
-            "location": ""
+            "location": "Gym"
         },
         {
             "class": "",
@@ -23,9 +81,9 @@
             "location": ""
         },
         {
-            "class": "",
+            "class": "Flexibility",
             "id": "4 0",
-            "location": ""
+            "location": "Multipurpose Hall"
         },
         {
             "class": "",
@@ -98,14 +156,14 @@
             "location": ""
         },
         {
-            "class": "",
+            "class": "Tactics",
             "id": "5 2",
-            "location": ""
+            "location": "Outdoor Sports Field"
         },
         {
-            "class": "",
+            "class": "TeamBuilding",
             "id": "6 2",
-            "location": ""
+            "location": "Outdoor Sports Field"
         },
         {
             "class": "",
@@ -143,9 +201,9 @@
             "location": ""
         },
         {
-            "class": "",
+            "class": "Stamina",
             "id": "0 4",
-            "location": ""
+            "location": "Gym"
         },
         {
             "class": "",
@@ -153,9 +211,9 @@
             "location": ""
         },
         {
-            "class": "",
+            "class": "Stamina",
             "id": "2 4",
-            "location": ""
+            "location": "Gym"
         },
         {
             "class": "",
@@ -163,9 +221,9 @@
             "location": ""
         },
         {
-            "class": "",
+            "class": "Stamina",
             "id": "4 4",
-            "location": ""
+            "location": "Gym"
         },
         {
             "class": "",
