@@ -1,4 +1,5 @@
 var currentUserObject = {}; 
+var data = {};
 
 //This function gets the current user info from the Flask app and stores it in Test Object,
 //Change the test object to a current user object, and we can dynamically set any user info
@@ -35,6 +36,62 @@ function loadUserInfo() {
     el.innerHTML = currentUserObject.email; 
     
 }
+
+/* This function should send an XMLHttpRequest to the server to get all of the 
+json data. Not sure as yet of the form of the data. */
+function getData() {
+
+  console.log('Getting data from Flask'); 
+
+  //Create a HTTP request to talk to the Flask app. 
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          data = JSON.parse(this.responseText);
+          console.log(data);
+          loadTableInfo(); 
+      } else {
+          console.log('xhttp request problem occurred', this.status); 
+      }
+  }
+
+  xhttp.open("GET", "api/users", true); 
+  xhttp.send(); 
+
+}
+
+/* This function will load all of the relevant info into the tables on the dashboard */
+function loadTableInfo() {
+
+  //Fixtures Table
+  document.getElementById('f-r1-d').innerHTML = data.fixtures[0].date;
+  document.getElementById('f-r1-t').innerHTML = data.fixtures[0].team1; 
+
+  document.getElementById('f-r2-d').innerHTML = data.fixtures[1].date;
+  document.getElementById('f-r2-t').innerHTML = data.fixtures[1].team1; 
+
+  document.getElementById('f-r3-d').innerHTML = data.fixtures[2].date;
+  document.getElementById('f-r3-t').innerHTML = data.fixtures[2].team1; 
+
+  document.getElementById('f-r4-d').innerHTML = data.fixtures[3].date;
+  document.getElementById('f-r4-t').innerHTML = data.fixtures[3].team1;
+
+  //Results table
+  document.getElementById('r-r1-t').innerHTML = data.results[0].team1; 
+  document.getElementById('r-r1-s').innerHTML = (data.results[0].team1Score + " : " + data.results[0].team2Score); 
+
+  document.getElementById('r-r2-t').innerHTML = data.results[1].team2; 
+  document.getElementById('r-r2-s').innerHTML = (data.results[1].team1Score + " : " + data.results[1].team2Score); 
+
+  document.getElementById('r-r3-t').innerHTML = data.results[2].team1; 
+  document.getElementById('r-r3-s').innerHTML = (data.results[2].team1Score + " : " + data.results[2].team2Score); 
+
+  document.getElementById('r-r4-t').innerHTML = data.results[3].team2; 
+  document.getElementById('r-r4-s').innerHTML = (data.results[3].team1Score + " : " + data.results[3].team2Score);
+
+
+}
+
 
 /* This function will relocate the user to the training schedule page */
 function onClickTrainingSchedule() {
@@ -99,4 +156,4 @@ document.getElementById('update-account-button').addEventListener("click", onCli
 document.getElementById('link-results').addEventListener('click', onClickResultsPage);
 document.getElementById('link-fixtures').addEventListener('click', onClickFixturesPage);
 document.getElementById('log-out-button').addEventListener("click", onClickLogOut);
-window.onload = getCurrentUser; 
+window.onload = getCurrentUser, getData; 
