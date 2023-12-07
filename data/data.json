@@ -27,38 +27,38 @@
     ],
     "results": [
         {
-          "team1" : "Exeter 1s", 
-          "team2" : "Bournemouth 1s",
-          "team1Score" : 2, 
-          "team2Score" : 2,
-          "date" : "2023-12-02",
-          "time" : "14:00"
+            "date": "2023-12-02",
+            "team1": "Exeter 1s",
+            "team1Score": 2,
+            "team2": "Bournemouth 1s",
+            "team2Score": 2,
+            "time": "14:00"
         },
         {
-          "team1" : "Bournemouth 1s", 
-          "team2" : "Southampton 1s",
-          "team1Score" : 2, 
-          "team2Score" : 1,
-          "date" : "2023-11-23",
-          "time" : "15:00"
+            "date": "2023-11-23",
+            "team1": "Bournemouth 1s",
+            "team1Score": 2,
+            "team2": "Southampton 1s",
+            "team2Score": 1,
+            "time": "15:00"
         },
         {
-          "team1" : "Portsmouth 2s", 
-          "team2" : "Bournemouth 1s",
-          "team1Score" : 3, 
-          "team2Score" : 1,
-          "date" : "2023-11-20",
-          "time" : "12:00"
+            "date": "2023-11-20",
+            "team1": "Portsmouth 2s",
+            "team1Score": 3,
+            "team2": "Bournemouth 1s",
+            "team2Score": 1,
+            "time": "12:00"
         },
         {
-          "team1" : "Bournemouth 1s", 
-          "team2" : "Chichester 1s",
-          "team1Score" : 2, 
-          "team2Score" : 0,
-          "date" : "2023-10-28",
-          "time" : "15:00"
+            "date": "2023-10-28",
+            "team1": "Bournemouth 1s",
+            "team1Score": 2,
+            "team2": "Chichester 1s",
+            "team2Score": 0,
+            "time": "15:00"
         }
-      ],
+    ],
     "trainingschedule": [
         {
             "class": "Tactics",
